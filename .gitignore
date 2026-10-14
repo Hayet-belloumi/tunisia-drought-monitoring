@@ -1,0 +1,31 @@
+# Environnements et caches
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Données (remplies par le pipeline, jamais versionnées dans Git)
+data/
+*.tif
+*.tiff
+*.parquet
+
+# Secrets et clés (Earth Engine, comptes de service)
+.env
+*.env
+*-key.json
+*credentials*.json
+service-account*.json
+.config/earthengine/
+
+# Suivi d'expériences
+mlruns/
+
+# Éditeur / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

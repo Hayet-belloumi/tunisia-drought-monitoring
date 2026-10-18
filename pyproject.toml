@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "earthengine-api>=1.7.48",
+    "geopandas>=1.2.0",
+    "pyyaml>=6.0.3",
 ]
 
 [build-system]

@@ -1,0 +1,23 @@
+# Zones pilotes de la v1.0 (cahier des charges, section 3).
+# Les gouvernorats sont identifiés par leur P-code (colonne adm2_pcode) plutôt que par leur
+# nom, dont l'orthographe varie selon les sources.
+boundaries:
+  source: "OCHA / HDX, Tunisia - Subnational Administrative Boundaries (COD-AB), CC BY-IGO"
+  layer: tun_admin2.shp
+  id_column: adm2_pcode
+  name_column: adm2_name
+  expected_governorates: 24
+
+zones:
+  - id: sfax
+    name: Sfax
+    pcode: TN34
+    role: oléiculture
+  - id: beja
+    name: Béja
+    pcode: TN21
+    role: céréaliculture
+  - id: kairouan
+    name: Kairouan
+    pcode: TN41
+    role: zone mixte (agriculture et parcours)

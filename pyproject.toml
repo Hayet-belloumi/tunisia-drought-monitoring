@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Suivi mensuel de l'occupation des sols et de la sécheresse en Tunisie par imagerie satellite."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "earthengine-api>=1.7.48",
+]
 
 [build-system]
 requires = ["hatchling"]

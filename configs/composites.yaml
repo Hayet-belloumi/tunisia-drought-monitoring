@@ -1,0 +1,11 @@
+# Paramètres des composites mensuels Sentinel-2 (voir docs/adr/0002-masque-nuages.md).
+cloud_mask:
+  collection: GOOGLE/CLOUD_SCORE_PLUS/V1/S2_HARMONIZED
+  band: cs_cdf
+  threshold: 0.6
+
+composite:
+  collection: COPERNICUS/S2_SR_HARMONIZED
+  bands: [B2, B3, B4, B8, B11, B12]
+  scale_factor: 0.0001
+  min_clear_observations: 2

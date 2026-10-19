@@ -54,3 +54,12 @@ observations, avec un nombre minimal d'observations claires par pixel.
   avec les polygones annotés.
 - Comparaison des profils de NDVI par classe entre les méthodes.
 - Une seule image inspectée et une seule année (2025) : étendre à d'autres années et zones.
+
+## Mise à jour : composites mensuels (étape 4)
+
+Le composite est calculé avec `src/tdm/gee/composites.py` (médiane des observations claires,
+paramètres dans `configs/composites.yaml`). Un pixel qui a moins de 2 observations claires dans
+le mois reste vide. Test sur Béja, Sfax et Kairouan (janvier, avril, juillet 2025, à 100 m) :
+part de pixels valides de 0,941 à 1,000, la plus faible étant Béja en janvier (5,9 % de
+pixels vides). NDVI moyens plausibles (Béja : 0,41 en janvier, 0,61 en avril, 0,24 en juillet).
+Limite : les pixels vides devront être exclus des statistiques et jamais remplis par défaut.

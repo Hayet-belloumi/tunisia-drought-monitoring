@@ -34,7 +34,11 @@ testpaths = ["tests"]
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.4.0",
+    "jupytext>=1.19.6",
+    "matplotlib>=3.11.2",
     "mypy>=2.4.0",
+    "nbconvert>=7.17.2",
     "pre-commit>=4.7.0",
     "pytest>=9.1.1",
     "pytest-cov>=7.1.0",

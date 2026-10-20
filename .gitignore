@@ -29,3 +29,7 @@ mlruns/
 .idea/
 Thumbs.db
 .DS_Store
+# Couverture de tests
+.coverage
+htmlcov/
+coverage.xml

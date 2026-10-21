@@ -142,8 +142,8 @@ print(summary.round(3).to_string())
 # %% [markdown]
 # ## Constats (à valider, une seule année)
 #
-# - Béja (céréales) montre un cycle net : NDVI maximal en mars (0,65), puis baisse de mai à
-#   juillet. C'est compatible avec un cycle de céréales d'hiver.
+# - Béja (céréales) montre un cycle net : NDVI maximal en mars (0,65), puis forte baisse
+#   d'avril à juin (0,61 à 0,29). C'est compatible avec un cycle de céréales d'hiver.
 # - Sfax (oliviers) et Kairouan (zone mixte) ont un NDVI bas et peu variable, avec un léger
 #   maximum en hiver.
 # - Les composites sont valides à plus de 94 % des pixels toute l'année ; la valeur la plus

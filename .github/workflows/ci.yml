@@ -1,0 +1,33 @@
+name: CI
+
+# Lance les contrôles de qualité à chaque envoi sur main et à chaque demande de fusion.
+# Pas de données ni de compte Earth Engine ici : les tests qui ont besoin des frontières
+# (tests/test_geometry.py, une partie de tests/test_split_frozen.py) sont ignorés.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Installer les dépendances (versions verrouillées)
+        run: uv sync --locked
+
+      - name: Style du code (ruff)
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Typage (mypy)
+        run: uv run mypy src
+
+      - name: Tests et couverture
+        run: uv run pytest --cov=tdm --cov-report=term-missing

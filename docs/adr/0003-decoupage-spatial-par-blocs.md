@@ -42,3 +42,15 @@ entraînement.
   elle le sera à l'échantillonnage des pixels d'entraînement.
 - La taille de 10 km n'est pas justifiée par une mesure de l'autocorrélation spatiale de nos
   données : c'est un choix défendable mais non démontré.
+## Résultat (généré le 2026-10-23)
+
+195 blocs au total, dont 40 de test (20,5 %) :
+
+| Zone | Blocs | Test | Entraînement |
+|---|---|---|---|
+| Sfax | 78 | 16 | 62 |
+| Béja | 44 | 9 | 35 |
+| Kairouan | 73 | 15 | 58 |
+
+Les 155 blocs d'entraînement sont répartis en 5 folds de 30 à 32 blocs. L'empreinte SHA-256 du
+fichier gelé est dans `configs/spatial_split.sha256`.

@@ -3314,7 +3314,11 @@ source = { editable = "." }
 dependencies = [
     { name = "earthengine-api" },
     { name = "geopandas" },
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.5.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "pandas" },
     { name = "pyyaml" },
+    { name = "shapely" },
 ]
 
 [package.dev-dependencies]
@@ -3334,7 +3338,10 @@ dev = [
 requires-dist = [
     { name = "earthengine-api", specifier = ">=1.7.48" },
     { name = "geopandas", specifier = ">=1.2.0" },
+    { name = "numpy", specifier = ">=2.4.6" },
+    { name = "pandas", specifier = ">=3.0.6" },
     { name = "pyyaml", specifier = ">=6.0.3" },
+    { name = "shapely", specifier = ">=2.2.0" },
 ]
 
 [package.metadata.requires-dev]

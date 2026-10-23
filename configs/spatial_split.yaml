@@ -1,0 +1,10 @@
+# Découpage spatial par blocs (voir docs/adr/0003-decoupage-spatial-par-blocs.md).
+block_size_m: 10000          # côté d'un bloc carré, en mètres
+crs: EPSG:32632              # UTM 32N : couvre toute la Tunisie, unités en mètres
+min_overlap_fraction: 0.25   # un bloc est gardé si 25 % au moins de sa surface est dans la zone
+test_fraction: 0.20          # part des blocs mis de côté pour le test, dans chaque zone
+n_folds: 5                   # folds de validation croisée sur les blocs d'entraînement
+seed: 42                     # graine du tirage ; le fichier gelé fait foi, pas la graine
+buffer_m: 1000               # marge à exclure autour des blocs de test à l'échantillonnage
+frozen_csv: configs/spatial_split.csv
+frozen_sha256: configs/spatial_split.sha256

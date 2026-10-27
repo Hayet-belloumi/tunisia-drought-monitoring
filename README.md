@@ -84,6 +84,13 @@ uv run pytest
     notebooks/      exploration (01_eda.py est la source, 01_eda.ipynb est généré)
     tests/          tests automatiques
 
+    src/tdm/        code : gee/ (Earth Engine), labels/ (découpage), zones.py, boundaries.py
+    configs/        paramètres : zones, composites, découpage spatial (et son fichier gelé)
+    docs/adr/       décisions techniques justifiées
+    docs/figures/   figures du notebook
+    notebooks/      exploration (01_eda.py est la source, 01_eda.ipynb est généré)
+    tests/          tests automatiques
+
 ## Qualité des tests
 
 29 tests. La couverture de `src/` mesurée localement était de 36 % avant l'ajout du découpage spatial, pour une cible de 70 % : les modules qui appellent Earth Engine ne sont pas testables sans réseau. Plan : tester le téléchargement avec un faux fichier, séparer le code d'exploration du code de production, et tester la logique pure des composites. La CI n'a ni données ni accès à Earth Engine : les tests qui lisent les frontières y sont ignorés.

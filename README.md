@@ -17,7 +17,7 @@ Suivi mensuel de l'occupation des sols et de l'état de sécheresse de la Tunisi
 | Composites mensuels | médiane des observations claires, au moins 2 par pixel | ✅ |
 | Exploration | [notebook](notebooks/01_eda.ipynb) : nuages, couverture, profils de NDVI | ✅ |
 | Découpage spatial gelé | blocs de 10 km, 20 % de test, 5 folds ([ADR 0003](docs/adr/0003-decoupage-spatial-par-blocs.md)) | ✅ |
-| Étiquettes (annotation QGIS) | à faire | ⏳ |
+| Étiquettes (annotation QGIS) | [protocole d'annotation](docs/protocole-annotation.md), blocs de Kairouan exportés, contrôle qualité automatique ; annotation en cours | ⏳ |
 | Random Forest, U-Net | à faire | ⏳ |
 | Indices de sécheresse (VCI, SMAP, SPI) | à faire | ⏳ |
 | Carte interactive, API, pipeline mensuel | à faire | ⏳ |
@@ -86,7 +86,7 @@ uv run pytest
 
 ## Qualité des tests
 
-29 tests. La couverture de `src/` mesurée localement était de 36 % avant l'ajout du découpage spatial, pour une cible de 70 % : les modules qui appellent Earth Engine ne sont pas testables sans réseau. Plan : tester le téléchargement avec un faux fichier, séparer le code d'exploration du code de production, et tester la logique pure des composites. La CI n'a ni données ni accès à Earth Engine : les tests qui lisent les frontières y sont ignorés.
+48 tests, couverture mesurée de 65 % sur `src/` (cible : 70 %). Le téléchargement des frontières est testé sans réseau (fausse archive, tentatives répétées, archive corrompue). `src/tdm/gee/visual_check.py`, qui produit des miniatures Earth Engine, est exclu de la mesure : il demande un accès réseau et des identifiants, qui ne doivent pas figurer dans la CI. Les modules `composites.py` et `explore.py` mélangent logique pure et appels Earth Engine : leur logique pure reste à tester. La CI n'a ni données ni accès à Earth Engine : les tests qui lisent les frontières y sont ignorés.
 
 ## Licence
 

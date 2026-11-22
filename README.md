@@ -86,7 +86,7 @@ uv run pytest
 
 ## Qualité des tests
 
-48 tests, couverture mesurée de 65 % sur `src/` (cible : 70 %). Le téléchargement des frontières est testé sans réseau (fausse archive, tentatives répétées, archive corrompue). `src/tdm/gee/visual_check.py`, qui produit des miniatures Earth Engine, est exclu de la mesure : il demande un accès réseau et des identifiants, qui ne doivent pas figurer dans la CI. Les modules `composites.py` et `explore.py` mélangent logique pure et appels Earth Engine : leur logique pure reste à tester. La CI n'a ni données ni accès à Earth Engine : les tests qui lisent les frontières y sont ignorés.
+58 tests, couverture mesurée de 71 % sur `src/` (cible : 70 %). Le téléchargement des frontières est testé sans réseau (fausse archive, tentatives répétées, archive corrompue). `src/tdm/gee/visual_check.py`, qui produit des miniatures Earth Engine, est exclu de la mesure : il demande un accès réseau et des identifiants, qui ne doivent pas figurer dans la CI. Les modules `composites.py` et `explore.py` mélangent logique pure et appels Earth Engine : leur logique pure reste à tester. La CI n'a ni données ni accès à Earth Engine : les tests qui lisent les frontières y sont ignorés.
 
 ## Licence
 

@@ -43,3 +43,19 @@ Une classe absente ou très rare à Kairouan est **documentée telle quelle**, j
 - Projection : EPSG:32632 (celle des blocs).
 - Colonnes : `class_id` (entier 1 à 7), `class_name` (texte).
 - Source de photo-interprétation : composites Sentinel-2 mensuels du projet ; un fond haute résolution peut aider à décider mais n'est ni redistribué ni publié.
+## Révision n°1 (22 novembre 2026)
+
+Cette révision a été faite avant tout entraînement et avant tout score de modèle.
+
+- **Cibles en pixels** : au moins 200 pixels Sentinel-2 entièrement contenus dans
+  les polygones en train, et 50 en test, par classe. Elles remplacent les cibles
+  exprimées en nombre de polygones, peu pertinentes quand les parcelles sont
+  petites ou étroites. Le nombre de pixels est estimé en rétrécissant chaque
+  polygone de 10 m et en divisant l'aire par 400 m² (voir le contrôle automatique).
+- **Taille des polygones** : de 1 à 3 ha, en forme compacte. Une alerte est émise
+  sous 900 m² ou au-dessus de 50 ha.
+- **Image de référence** : une imagerie haute résolution sert à décider de la
+  classe, puis les composites Sentinel-2 des quatre dates servent à vérifier la
+  cohérence temporelle. L'imagerie de référence n'est ni exportée ni versionnée.
+
+Retour d'expérience et limites : [journal d'annotation](journal-annotation.md).

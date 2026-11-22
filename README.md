@@ -17,7 +17,7 @@ Suivi mensuel de l'occupation des sols et de l'état de sécheresse de la Tunisi
 | Composites mensuels | médiane des observations claires, au moins 2 par pixel | ✅ |
 | Exploration | [notebook](notebooks/01_eda.ipynb) : nuages, couverture, profils de NDVI | ✅ |
 | Découpage spatial gelé | blocs de 10 km, 20 % de test, 5 folds ([ADR 0003](docs/adr/0003-decoupage-spatial-par-blocs.md)) | ✅ |
-| Étiquettes (annotation QGIS) | [protocole d'annotation](docs/protocole-annotation.md), blocs de Kairouan exportés, contrôle qualité automatique ; annotation en cours | ⏳ |
+| Étiquettes (annotation QGIS) | [protocole d'annotation](docs/protocole-annotation.md), blocs de Kairouan exportés, contrôle qualité automatique ; classe « oliviers » terminée (206 pixels en train, 66 en test), 6 classes restantes ([journal d'annotation](docs/journal-annotation.md)) | ⏳ |
 | Random Forest, U-Net | à faire | ⏳ |
 | Indices de sécheresse (VCI, SMAP, SPI) | à faire | ⏳ |
 | Carte interactive, API, pipeline mensuel | à faire | ⏳ |
